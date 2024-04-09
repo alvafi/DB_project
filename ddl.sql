@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Client (
 	client_id INTEGER NOT NULL PRIMARY KEY,
 	surname VARCHAR(50) NOT NULL,
 	first_name VARCHAR(50) NOT NULL,
-	patronymic VARCHAR(50) NOT NULL,
+	patronymic VARCHAR(50) NULL,
 	passport_series_number INTEGER NOT NULL,
 	birth_date DATE NOT NULL,
 	driver_license_number VARCHAR(50) NOT NULL,
@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS Client (
 CREATE TABLE IF NOT EXISTS Car_history (
 	car_history_id INTEGER NOT NULL PRIMARY KEY,
 	car_id INTEGER NOT NULL,
-	start_use_date TIMESTAMP without time zone NOT NULL,
-	end_use_date TIMESTAMP without time zone NOT NULL,
+	start_use_date DATE NOT NULL,
+	end_use_date DATE NULL,
 	FOREIGN KEY (car_id) REFERENCES Car (car_id)
 );
 
